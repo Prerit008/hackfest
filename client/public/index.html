@@ -1,0 +1,4322 @@
+<!DOCTYPE html>
+
+<!-- This code was generated using AnimaApp.com. 
+This code is a high-fidelity prototype.
+Get developer-friendly React or HTML/CSS code for this project at: https://projects.animaapp.com?utm_source=hosted-code 
+27/09/2024 17:07:19 -->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1440, maximum-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://animaproject.s3.amazonaws.com/home/favicon.png"
+    />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <script id="anima-load-script" src="load.js"></script>
+    <script id="anima-hotspots-script" src="hotspots.js"></script>
+    <script id="anima-overrides-script" src="overrides.js"></script>
+    <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      @import url("https://fonts.googleapis.com/css?family=DM+Sans:500,400,700|Roboto:500");
+
+      @font-face {
+        font-family: "Sequel Sans-MediumDisp";
+        font-style: normal;
+        font-weight: 500;
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/610c77e2c576103f13f1a464/fonts/sequel-sans-medium-disp.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: "Sequel Sans-BlackDisp";
+        font-style: normal;
+        font-weight: 900;
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/66561597c7f1e589567d3b85/fonts/sequel-sans-black-disp.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: "Sequel Sans-RomanDisp";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/667bf7a4f1077d330fb894c8/fonts/sequel-sans-roman-disp.otf")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: "Sequel Sans-SemiBold Disp";
+        font-style: normal;
+        font-weight: 600;
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/667bf7a4f1077d330fb894c8/fonts/sequel-sans-semi-bold-disp.otf")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: "Sequel Sans-BookDisp";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/projects/5ffaef99fe6940225c193f92/fonts/sequel-sans-book-disp.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: "Sequel Sans-BoldDisp";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5e97541b3d0eb82375a7a3cb/SequelSans-BoldDisp.ttf")
+          format("truetype");
+      }
+      /* The following line is used to measure usage of this code. You can remove it if you want. */
+      @import url("https://px.animaapp.com/66f6e5d51062e78fcef7466a.66f6e5d61062e78fcef7466d.TSxdvfk.hch.png");
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .component-wrapper a {
+        display: contents;
+        pointer-events: auto;
+        text-decoration: none;
+      }
+
+      .component-wrapper * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe {
+        pointer-events: auto;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .screen a {
+        display: contents;
+        text-decoration: none;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .container-center-vertical > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .container-center-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+        width: 100%;
+      }
+
+      .container-center-horizontal > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .auto-animated div {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated input {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay-base {
+        display: none;
+        height: 100%;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .overlay-base.animate-appear {
+        align-items: center;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+      }
+
+      .overlay-base.animate-disappear {
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+        display: block;
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      .overlay-base.animate-disappear * {
+        pointer-events: none;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+
+      .align-self-flex-center {
+        align-self: flex-center;
+      }
+
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --alabaster: #f9fafc;
+        --athens-gray: #ebeef3;
+        --black: #3d3232;
+        --black-2: #000000;
+        --granite-gray: #696767;
+        --heather: #b8c2ce;
+        --main: #262626;
+        --shark: #26262699;
+        --shark-2: #2626269c;
+        --white: #ffffff;
+
+        --font-size-l: 18px;
+        --font-size-m: 16px;
+        --font-size-s: 14px;
+        --font-size-xl: 20px;
+        --font-size-xs: 12px;
+        --font-size-xxl: 22px;
+        --font-size-xxs: 10px;
+
+        --font-family-darkline-regular: "Darkline-Regular", Helvetica;
+        --font-family-dm_sans: "DM Sans", Helvetica;
+        --font-family-roboto: "Roboto", Helvetica;
+        --font-family-sequel_sans-blackdisp: "Sequel Sans-BlackDisp", Helvetica;
+        --font-family-sequel_sans-bolddisp: "Sequel Sans-BoldDisp", Helvetica;
+        --font-family-sequel_sans-bookdisp: "Sequel Sans-BookDisp", Helvetica;
+        --font-family-sequel_sans-mediumdisp: "Sequel Sans-MediumDisp",
+          Helvetica;
+        --font-family-sequel_sans-romandisp: "Sequel Sans-RomanDisp", Helvetica;
+        --font-family-sequel_sans-semibold_disp: "Sequel Sans-SemiBold Disp",
+          Helvetica;
+      }
+      .sequelsans-bookdisp-normal-shark-16px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-bookdisp);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .sequelsans-semibolddisp-semi-bold-shark-13px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-semibold_disp);
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      .dmsans-medium-shark-10px {
+        color: var(--shark);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .sequelsans-semibolddisp-semi-bold-shark-16px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-semibold_disp);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      .sequelsans-bookdisp-normal-shark-24px {
+        color: var(--shark-2);
+        font-family: var(--font-family-sequel_sans-bookdisp);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .sequelsans-mediumdisp-medium-shark-28px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-mediumdisp);
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .sequelsans-romandisp-normal-shark-16px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-romandisp);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .dmsans-normal-shark-15px {
+        color: var(--shark);
+        font-family: var(--font-family-dm_sans);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .sequelsans-blackdisp-black-white-37px {
+        font-family: var(--font-family-sequel_sans-blackdisp);
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 900;
+      }
+
+      .sequelsans-mediumdisp-medium-shark-22px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-mediumdisp);
+        font-size: var(--font-size-xxl);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .dmsans-medium-granite-gray-16px {
+        color: var(--granite-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .dmsans-medium-shark-14px {
+        color: var(--shark);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .sequelsans-mediumdisp-medium-shark-18px {
+        color: var(--main);
+        font-family: var(--font-family-sequel_sans-mediumdisp);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .dmsans-normal-granite-gray-12px {
+        color: var(--granite-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .roboto-medium-dune-14px {
+        color: var(--black);
+        font-family: var(--font-family-roboto);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .dmsans-normal-athens-gray-12px {
+        color: var(--athens-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      :root {
+      }
+
+      /* screen - landing-page */
+
+      .landing-page {
+        background-color: var(--alabaster);
+        height: 4546px;
+        overflow: hidden;
+        overflow-x: hidden;
+        position: relative;
+        width: 1440px;
+      }
+
+      .landing-page .rectangle-21901-0MUxxh {
+        background-color: var(--white);
+        height: 92px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 1440px;
+      }
+
+      .landing-page .nav-list-item-0MUxxh {
+        align-items: center;
+        background-color: #587190;
+        border-radius: 6px;
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        left: 1205px;
+        padding: 0px 10px 0px 15px;
+        position: absolute;
+        top: 28px;
+        width: 100px;
+      }
+
+      .landing-page .frame-faN10f {
+        background-color: transparent;
+        height: 39px;
+        margin-bottom: -2px;
+        margin-left: -2px;
+        margin-top: -2px;
+        position: relative;
+        width: 39px;
+      }
+
+      .landing-page .search-faN10f {
+        background-color: transparent;
+        color: var(--white);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.14px;
+        line-height: 42px;
+        margin-bottom: -2.5px;
+        margin-left: -12px;
+        margin-right: -2px;
+        margin-top: -4.5px;
+        position: relative;
+        text-align: left;
+        width: 52px;
+      }
+
+      .landing-page .trending-news-0MUxxh {
+        background-color: transparent;
+        height: 609px;
+        left: 135px;
+        position: absolute;
+        top: 1443px;
+        width: 1172px;
+      }
+
+      .landing-page .rectangle-22000-jRzKJo {
+        height: 609px;
+        top: 0px;
+        width: 1170px;
+      }
+
+      .landing-page .post-3-jRzKJo {
+        top: 83px;
+      }
+
+      .landing-page .x6-year-old-horse-die-SiiocF {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 24.6px;
+        position: absolute;
+        text-align: left;
+        top: 28px;
+        width: 245px;
+      }
+
+      .landing-page .race98-03-june-2024-SiiocF {
+        left: 254px;
+        top: 14px;
+      }
+
+      .landing-page .new-yorka-6-year-old-SiiocF {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 14.9px;
+        position: absolute;
+        text-align: left;
+        top: 90px;
+        width: 239px;
+      }
+
+      .landing-page .race-hose-1-SiiocF {
+        background-color: transparent;
+        height: 150px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 234px;
+      }
+
+      .landing-page .post-3-xWxvFN {
+        top: 253px;
+      }
+
+      .landing-page .savilia-blunk-embrac-g6luve {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 24.6px;
+        position: absolute;
+        text-align: left;
+        top: 28px;
+        width: 245px;
+      }
+
+      .landing-page .jony-ls-03-june-2024-g6luve {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 14px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .last-year-savilia-bl-g6luve {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 14.9px;
+        position: absolute;
+        text-align: left;
+        top: 90px;
+        width: 239px;
+      }
+
+      .landing-page .cyclist-leads-action-g6luve {
+        background-color: transparent;
+        height: 150px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 234px;
+      }
+
+      .landing-page .post-3-btIsFx {
+        top: 423px;
+      }
+
+      .landing-page .ryan-garcia-is-fight-qQsPMl {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 24.6px;
+        position: absolute;
+        text-align: left;
+        top: 28px;
+        width: 245px;
+      }
+
+      .landing-page .kingf-03-june-2024-qQsPMl {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 14px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .boxing-star-ryan-gar-qQsPMl {
+        background-color: transparent;
+        height: auto;
+        left: 254px;
+        letter-spacing: 0px;
+        line-height: 14.9px;
+        position: absolute;
+        text-align: left;
+        top: 90px;
+        width: 239px;
+      }
+
+      .landing-page .empty-boxing-arena-w-qQsPMl {
+        background-color: transparent;
+        height: 150px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 234px;
+      }
+
+      .landing-page .trending-news-jRzKJo {
+        background-color: transparent;
+        height: auto;
+        left: 36px;
+        letter-spacing: 0px;
+        line-height: 38px;
+        position: absolute;
+        text-align: left;
+        top: 29px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .post-1-jRzKJo {
+        height: 609px;
+        left: 600px;
+        position: absolute;
+        width: 574px;
+      }
+
+      .landing-page .sportsman-drinking-w-xsB2G2 {
+        background-color: transparent;
+        height: 609px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 570px;
+      }
+
+      .landing-page .rectangle-22011-xsB2G2 {
+        background-color: var(--black-2);
+        border-radius: 6px;
+        height: 609px;
+        left: 0px;
+        mix-blend-mode: normal;
+        opacity: 0.6;
+        position: absolute;
+        top: 0px;
+        width: 570px;
+      }
+
+      .landing-page .frame-5088-xsB2G2 {
+        background-color: transparent;
+        border: 1px solid;
+        border-color: var(--athens-gray);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 36px;
+        left: 36px;
+        padding: 29px 26px;
+        top: 31px;
+        width: 108px;
+      }
+
+      .landing-page .cycling-IaernK {
+        background-color: transparent;
+        color: var(--athens-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-bottom: -22.96px;
+        margin-left: -7.15px;
+        margin-right: -7.15px;
+        margin-top: -24.96px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .discover-the-member-xsB2G2 {
+        background-color: transparent;
+        color: var(--white);
+        font-family: var(--font-family-sequel_sans-blackdisp);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 900;
+        height: auto;
+        left: 36px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 488px;
+        width: 509px;
+      }
+
+      .landing-page .debits-03-june-2024-xsB2G2 {
+        background-color: transparent;
+        color: var(--white);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 400;
+        height: auto;
+        left: 36px;
+        letter-spacing: 0px;
+        line-height: 18.2px;
+        position: absolute;
+        text-align: left;
+        top: 460px;
+        white-space: nowrap;
+        width: 272px;
+      }
+
+      .landing-page .category-0MUxxh {
+        background-color: transparent;
+        height: 488px;
+        left: 135px;
+        position: absolute;
+        top: 875px;
+        width: 1180px;
+      }
+
+      .landing-page .category-AEV5jU {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 38px;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .rectangle-22000-AEV5jU {
+        height: 116px;
+        top: 54px;
+        width: 270px;
+      }
+
+      .landing-page .football-AEV5jU {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        height: auto;
+        left: 34px;
+        line-height: 75px;
+        position: absolute;
+        text-align: center;
+        text-fill-color: transparent;
+        top: 74px;
+        width: 203px;
+      }
+
+      .landing-page .rectangle-22004-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 116px;
+        left: 600px;
+        position: absolute;
+        top: 54px;
+        transform: rotate(180deg);
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22001-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 288px;
+        left: 0px;
+        position: absolute;
+        top: 200px;
+        transform: rotate(180deg);
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22002-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 169px;
+        left: 300px;
+        position: absolute;
+        top: 319px;
+        width: 270px;
+      }
+
+      .landing-page .bascket-ball-AEV5jU {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        background-color: transparent;
+        height: auto;
+        left: 321px;
+        letter-spacing: 0px;
+        line-height: 39px;
+        position: absolute;
+        text-align: center;
+        text-fill-color: transparent;
+        top: 364px;
+        width: 210px;
+      }
+
+      .landing-page .car-sport-AEV5jU {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        background-color: transparent;
+        height: auto;
+        left: 611px;
+        letter-spacing: 0px;
+        line-height: 39px;
+        position: absolute;
+        text-align: center;
+        text-fill-color: transparent;
+        top: 92px;
+        width: 248px;
+      }
+
+      .landing-page .rectangle-22006-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 118px;
+        left: 900px;
+        position: absolute;
+        top: 370px;
+        width: 270px;
+      }
+
+      .landing-page .table-tennis-AEV5jU {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        background-color: transparent;
+        height: auto;
+        left: 930px;
+        letter-spacing: 0px;
+        line-height: 39px;
+        position: absolute;
+        text-align: center;
+        text-fill-color: transparent;
+        top: 390px;
+        width: 210px;
+      }
+
+      .landing-page .rectangle-22003-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 235px;
+        left: 300px;
+        position: absolute;
+        top: 54px;
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22005-AEV5jU {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 288px;
+        left: 600px;
+        position: absolute;
+        top: 200px;
+        transform: rotate(180deg);
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22007-AEV5jU {
+        background-color: #010101;
+        border-radius: 6px;
+        height: 286px;
+        left: 900px;
+        position: absolute;
+        top: 54px;
+        width: 270px;
+      }
+
+      .landing-page .soccer-ball-green-gr-AEV5jU {
+        background-color: transparent;
+        height: 288px;
+        left: 0px;
+        position: absolute;
+        top: 200px;
+        width: 270px;
+      }
+
+      .landing-page .close-up-basketball-outdoors-1-AEV5jU {
+        background-color: transparent;
+        height: 235px;
+        left: 300px;
+        position: absolute;
+        top: 54px;
+        width: 270px;
+      }
+
+      .landing-page .sport-car-is-driftin-AEV5jU {
+        background-color: transparent;
+        height: 288px;
+        left: 600px;
+        position: absolute;
+        top: 200px;
+        width: 270px;
+      }
+
+      .landing-page .red-ping-pong-racket-sports-equipment-1-AEV5jU {
+        background-color: transparent;
+        height: 198px;
+        left: 900px;
+        position: absolute;
+        top: 100px;
+        width: 270px;
+      }
+
+      .landing-page .hero-section-0MUxxh {
+        background-image: url("./5.png");
+        background-size: cover;
+        height: 683px;
+        position: absolute;
+        top: 112px;
+        width: 100vw;
+      }
+
+      .landing-page .basketball_sport_ico-phB40H {
+        background-color: transparent;
+        height: 513px;
+        left: 78px;
+        mix-blend-mode: luminosity;
+        position: absolute;
+        top: 0px;
+        width: 638px;
+      }
+
+      .landing-page .top-scorer-to-the-final-match-phB40H {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-sequel_sans-blackdisp);
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 900;
+        height: auto;
+        left: 213px;
+        letter-spacing: 0px;
+        line-height: 75px;
+        position: absolute;
+        text-align: left;
+        text-fill-color: transparent;
+        top: 92px;
+        width: 470px;
+      }
+
+      .landing-page .basketball-player-action-sunset-1-phB40H {
+        background-color: transparent;
+        height: 580px;
+        left: 362px;
+        position: absolute;
+        top: 59px;
+        width: 720px;
+      }
+
+      .landing-page .group-143726056-phB40H {
+        background-color: transparent;
+        height: 161px;
+        left: 613px;
+        position: absolute;
+        top: 522px;
+        width: 367px;
+      }
+
+      .landing-page .the-euro-league-fina-qLmur0 {
+        color: var(--main);
+        font-size: var(--font-size-l);
+        font-weight: 400;
+        left: 1px;
+        line-height: 25px;
+        top: 0px;
+        width: 364px;
+      }
+
+      .landing-page .frame-5065-qLmur0 {
+        align-items: flex-start;
+        background-color: var(--main);
+        border-radius: 6px;
+        display: inline-flex;
+        gap: 10px;
+        left: 0px;
+        padding: 12px 32px;
+        position: absolute;
+        top: 99px;
+      }
+
+      .landing-page .continue-reading-ttNugT {
+        background-color: transparent;
+        color: #e1e8f0;
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        line-height: 38px;
+        margin-top: -2px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .landing-page .group-143726059-phB40H {
+        background-color: transparent;
+        height: 554px;
+        left: 1113px;
+        position: absolute;
+        top: 91px;
+        width: 270px;
+      }
+
+      .landing-page .frame-5088-5QkrSd {
+        background-color: #e1e8f0;
+        border-radius: 3px;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 27px;
+        left: 0px;
+        padding: 4px 16px;
+        top: 0px;
+      }
+
+      .landing-page .today-2qkeWi {
+        background-color: transparent;
+        color: var(--heather);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .group-143726057-5QkrSd {
+        background-color: transparent;
+        height: 233px;
+        left: 0px;
+        position: absolute;
+        top: 58px;
+        width: 270px;
+      }
+
+      .landing-page .beautiful-young-afri-iM3DLt {
+        background-color: transparent;
+        height: 233px;
+        left: 0px;
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: 0px;
+        width: 270px;
+      }
+
+      .landing-page .post-2-iM3DLt {
+        width: 204px;
+      }
+
+      .landing-page .race98-03-june-2024-piRzJM {
+        left: 0px;
+        top: 0px;
+      }
+
+      .landing-page .ethiopian-runners-to-piRzJM {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 14px;
+        width: 200px;
+      }
+
+      .landing-page .group-143726058-5QkrSd {
+        background-color: transparent;
+        height: 233px;
+        left: 0px;
+        position: absolute;
+        top: 321px;
+        width: 270px;
+      }
+
+      .landing-page .fastaccelerating-rac-NdHIMS {
+        background-color: transparent;
+        height: 233px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 270px;
+      }
+
+      .landing-page .post-2-NdHIMS {
+        width: 238px;
+      }
+
+      .landing-page .indycar-03-june-2024-W6c2wD {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .indy-car-detroit-dix-W6c2wD {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 14px;
+        width: 234px;
+      }
+
+      .landing-page .line-72-0MUxxh {
+        background-color: transparent;
+        height: 1px;
+        left: 426px;
+        object-fit: cover;
+        position: absolute;
+        top: 1694px;
+        width: 279px;
+      }
+
+      .landing-page .line-73-0MUxxh {
+        background-color: transparent;
+        height: 1px;
+        left: 426px;
+        object-fit: cover;
+        position: absolute;
+        top: 1867px;
+        width: 279px;
+      }
+
+      .landing-page .recent-news-clubs-ranking-0MUxxh {
+        height: 354px;
+        left: 135px;
+        top: 2830px;
+        width: 1178px;
+      }
+
+      .landing-page .rectangle-22012-cHP2Xi {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 300px;
+        left: 600px;
+        position: absolute;
+        top: 54px;
+        width: 570px;
+      }
+
+      .landing-page .club-table-cHP2Xi {
+        background-color: transparent;
+        height: 269px;
+        left: 600px;
+        position: absolute;
+        top: 73px;
+        width: 572px;
+      }
+
+      .landing-page .club-KrjmaD {
+        height: auto;
+        left: 31px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: left;
+        top: 1px;
+        width: 44px;
+      }
+
+      .landing-page .points-KrjmaD {
+        background-color: transparent;
+        height: 19px;
+        left: 265px;
+        position: absolute;
+        top: 0px;
+        width: 296px;
+      }
+
+      .landing-page .gp-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .w-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 15px;
+      }
+
+      .landing-page .d-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 92px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 11px;
+      }
+
+      .landing-page .l-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 131px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 9px;
+      }
+
+      .landing-page .f-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 171px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 9px;
+      }
+
+      .landing-page .a-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 216px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 11px;
+      }
+
+      .landing-page .gd-2e742B {
+        background-color: transparent;
+        height: auto;
+        left: 257px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 0px;
+        width: 25px;
+      }
+
+      .landing-page .line-KrjmaD {
+        height: 24px;
+        left: 32px;
+        top: 43px;
+        width: 525px;
+      }
+
+      .landing-page .x38-Oy1xba {
+        left: 235px;
+        top: 2px;
+      }
+
+      .landing-page .x29-Oy1xba {
+        left: 281px;
+        top: 2px;
+      }
+
+      .landing-page .x6-Oy1xba {
+        left: 326px;
+        text-align: center;
+        top: 2px;
+      }
+
+      .landing-page .x3-Oy1xba {
+        left: 363px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: center;
+        top: 2px;
+        width: 10px;
+      }
+
+      .landing-page .x99-Oy1xba {
+        background-color: transparent;
+        height: auto;
+        left: 399px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x26-Oy1xba {
+        left: 446px;
+        top: 2px;
+      }
+
+      .landing-page .x73-Oy1xba {
+        background-color: transparent;
+        height: auto;
+        left: 493px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .club-Oy1xba {
+        height: 24px;
+        left: 0px;
+        top: 0px;
+        width: 165px;
+      }
+
+      .landing-page .x1-NfqxKf {
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        top: 2px;
+        width: 8px;
+      }
+
+      .landing-page .manchester-city-NfqxKf {
+        background-color: transparent;
+        height: auto;
+        left: 49px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 3px;
+        width: 112px;
+      }
+
+      .landing-page .imgteam09-NfqxKf {
+        background-color: transparent;
+        height: 24px;
+        left: 19px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i-8ujG45 {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .line-yyaROa {
+        height: 38px;
+        left: 0px;
+        top: 75px;
+        width: 584px;
+      }
+
+      .landing-page .background-kf2ZJD {
+        top: 0px;
+      }
+
+      .landing-page .x38-kf2ZJD {
+        left: 267px;
+        top: 9px;
+      }
+
+      .landing-page .x28-kf2ZJD {
+        background-color: transparent;
+        height: auto;
+        left: 313px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x8-kf2ZJD {
+        background-color: transparent;
+        height: auto;
+        left: 357px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 10px;
+      }
+
+      .landing-page .x2-kf2ZJD {
+        left: 395px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: center;
+        top: 9px;
+        width: 10px;
+      }
+
+      .landing-page .x94-kf2ZJD {
+        background-color: transparent;
+        height: auto;
+        left: 431px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x26-kf2ZJD {
+        left: 477px;
+        top: 9px;
+      }
+
+      .landing-page .x68-kf2ZJD {
+        background-color: transparent;
+        height: auto;
+        left: 524px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .club-kf2ZJD {
+        height: 24px;
+        left: 31px;
+        top: 7px;
+        width: 166px;
+      }
+
+      .landing-page .x2-HOvRBO {
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: left;
+        top: 4px;
+        width: 10px;
+      }
+
+      .landing-page .liverpool-HOvRBO {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 4px;
+        width: 112px;
+      }
+
+      .landing-page .imgteam07-HOvRBO {
+        background-color: transparent;
+        height: 24px;
+        left: 20px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i3-wxBeLd {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .line-iTHkMj {
+        height: 24px;
+        left: 31px;
+        top: 121px;
+        width: 526px;
+      }
+
+      .landing-page .x38-BrXisi {
+        left: 236px;
+        top: 2px;
+      }
+
+      .landing-page .x21-BrXisi {
+        background-color: transparent;
+        height: auto;
+        left: 282px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x11-BrXisi {
+        left: 323px;
+        top: 2px;
+      }
+
+      .landing-page .x6-BrXisi {
+        left: 364px;
+        text-align: center;
+        top: 2px;
+      }
+
+      .landing-page .x76-BrXisi {
+        background-color: transparent;
+        height: auto;
+        left: 400px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x33-BrXisi {
+        background-color: transparent;
+        height: auto;
+        left: 446px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x43-BrXisi {
+        background-color: transparent;
+        height: auto;
+        left: 494px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .club-BrXisi {
+        height: 24px;
+        left: 0px;
+        top: 0px;
+        width: 149px;
+      }
+
+      .landing-page .x3-OEYWKx {
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: left;
+        top: 4px;
+        width: 10px;
+      }
+
+      .landing-page .chelsea-OEYWKx {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 4px;
+        width: 95px;
+      }
+
+      .landing-page .imgteam06-OEYWKx {
+        background-color: transparent;
+        height: 24px;
+        left: 20px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i4-sytWxf {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .line-EluxDm {
+        height: 156px;
+        left: 0px;
+        top: 75px;
+        width: 584px;
+      }
+
+      .landing-page .background-1WRCZx {
+        top: 78px;
+      }
+
+      .landing-page .x38-1WRCZx {
+        left: 267px;
+        top: 87px;
+      }
+
+      .landing-page .x22-1WRCZx {
+        left: 313px;
+        top: 87px;
+      }
+
+      .landing-page .x5-1WRCZx {
+        left: 357px;
+        text-align: center;
+        top: 87px;
+      }
+
+      .landing-page .x11-1WRCZx {
+        left: 391px;
+        top: 87px;
+      }
+
+      .landing-page .x69-1WRCZx {
+        background-color: transparent;
+        height: auto;
+        left: 431px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 87px;
+        width: 19px;
+      }
+
+      .landing-page .x40-1WRCZx {
+        background-color: transparent;
+        height: auto;
+        left: 477px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 87px;
+        width: 19px;
+      }
+
+      .landing-page .x29-1WRCZx {
+        left: 524px;
+        top: 87px;
+      }
+
+      .landing-page .club-1WRCZx {
+        height: 24px;
+        left: 31px;
+        top: 85px;
+        width: 198px;
+      }
+
+      .landing-page .x4-X691US {
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        top: 3px;
+        width: 10px;
+      }
+
+      .landing-page .tottenham-hotspur-X691US {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 5px;
+        width: 144px;
+      }
+
+      .landing-page .imgteam05-X691US {
+        background-color: transparent;
+        height: 24px;
+        left: 20px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i5-GtMHGK {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .group-143726060-1WRCZx {
+        background-color: transparent;
+        height: 156px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 570px;
+      }
+
+      .landing-page .line-74-Kzlovc {
+        background-color: transparent;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        top: -0px;
+        width: 570px;
+      }
+
+      .landing-page .line-75-Kzlovc {
+        background-color: transparent;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        top: 38px;
+        width: 570px;
+      }
+
+      .landing-page .line-76-Kzlovc {
+        background-color: transparent;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        top: 78px;
+        width: 570px;
+      }
+
+      .landing-page .line-77-Kzlovc {
+        background-color: transparent;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        top: 116px;
+        width: 570px;
+      }
+
+      .landing-page .line-78-Kzlovc {
+        background-color: transparent;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        top: 156px;
+        width: 570px;
+      }
+
+      .landing-page .line-kiWClf {
+        height: 24px;
+        left: 31px;
+        top: 199px;
+        width: 526px;
+      }
+
+      .landing-page .x38-02xze0 {
+        left: 236px;
+        top: 2px;
+      }
+
+      .landing-page .x22-02xze0 {
+        left: 282px;
+        top: 2px;
+      }
+
+      .landing-page .x3-02xze0 {
+        left: 327px;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: center;
+        top: 2px;
+        width: 10px;
+      }
+
+      .landing-page .x13-02xze0 {
+        left: 360px;
+      }
+
+      .landing-page .x61-02xze0 {
+        background-color: transparent;
+        height: auto;
+        left: 400px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x48-02xze0 {
+        background-color: transparent;
+        height: auto;
+        left: 446px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x13-6xEEDY {
+        left: 494px;
+      }
+
+      .landing-page .club-02xze0 {
+        height: 24px;
+        left: 0px;
+        top: 0px;
+        width: 131px;
+      }
+
+      .landing-page .x5-kgaDxu {
+        left: 0px;
+        text-align: left;
+        top: 3px;
+      }
+
+      .landing-page .arsenal-kgaDxu {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 2px;
+        width: 77px;
+      }
+
+      .landing-page .imgteam04-kgaDxu {
+        background-color: transparent;
+        height: 24px;
+        left: 20px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i6-mjdxfx {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .line-SnPiXg {
+        height: 38px;
+        left: 0px;
+        top: 231px;
+        width: 584px;
+      }
+
+      .landing-page .background-4SxRB7 {
+        top: 0px;
+      }
+
+      .landing-page .x38-4SxRB7 {
+        left: 267px;
+        top: 9px;
+      }
+
+      .landing-page .x16-4SxRB7 {
+        background-color: transparent;
+        height: auto;
+        left: 313px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x10-4SxRB7 {
+        background-color: transparent;
+        height: auto;
+        left: 353px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x12-4SxRB7 {
+        background-color: transparent;
+        height: auto;
+        left: 391px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x57-4SxRB7 {
+        left: 431px;
+      }
+
+      .landing-page .x57-TajnT9 {
+        left: 477px;
+      }
+
+      .landing-page .x0-4SxRB7 {
+        background-color: transparent;
+        height: auto;
+        left: 528px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 10px;
+      }
+
+      .landing-page .club-4SxRB7 {
+        height: 24px;
+        left: 31px;
+        top: 7px;
+        width: 198px;
+      }
+
+      .landing-page .x6-0tXgGm {
+        left: 0px;
+        text-align: left;
+        top: 4px;
+      }
+
+      .landing-page .manchester-united-0tXgGm {
+        background-color: transparent;
+        height: auto;
+        left: 50px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: left;
+        top: 4px;
+        width: 144px;
+      }
+
+      .landing-page .imgteam08-0tXgGm {
+        background-color: transparent;
+        height: 24px;
+        left: 20px;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .i2-A1Z6Gc {
+        background-color: transparent;
+        height: 24px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 24px;
+      }
+
+      .landing-page .clubs-ranking-cHP2Xi {
+        height: auto;
+        left: 600px;
+        letter-spacing: 0px;
+        line-height: 38px;
+        position: absolute;
+        top: 0px;
+        width: auto;
+      }
+
+      .landing-page .recent-news-cHP2Xi {
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 38px;
+        position: absolute;
+        top: 0px;
+        width: auto;
+      }
+
+      .landing-page .karate-fighters-1-cHP2Xi {
+        background-color: transparent;
+        height: 300px;
+        left: 0px;
+        position: absolute;
+        top: 54px;
+        width: 270px;
+      }
+
+      .landing-page .card-cHP2Xi {
+        -webkit-backdrop-filter: blur(100px) brightness(100%);
+        backdrop-filter: blur(100px) brightness(100%);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.240000013113022) 0%,
+          rgba(255, 255, 255, 0.0600000032782555) 100%
+        );
+        background-color: transparent;
+        border-radius: 0px 0px 6px 6px;
+        box-shadow: 0px 0px 50px -25px #00000080;
+        height: 82px;
+        left: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: 272px;
+        width: 270px;
+      }
+
+      .landing-page .noise-iicxxJ {
+        background-color: transparent;
+        height: 82px;
+        left: 0px;
+        mix-blend-mode: overlay;
+        position: absolute;
+        top: 0px;
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22013-cHP2Xi {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 300px;
+        left: 300px;
+        position: absolute;
+        top: 54px;
+        transform: rotate(180deg);
+        width: 270px;
+      }
+
+      .landing-page .nav-list-item-cHP2Xi {
+        align-items: center;
+        background-color: var(--heather);
+        border-radius: 3px;
+        display: inline-flex;
+        gap: 4px;
+        justify-content: center;
+        left: 396px;
+        padding: 6px 12px 6px 7px;
+        position: absolute;
+        top: 309px;
+      }
+
+      .landing-page .more-YgAzGl {
+        background-color: transparent;
+        color: var(--white);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+        height: 16px;
+        letter-spacing: 0.14px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: 47px;
+      }
+
+      .landing-page .arrow-4-YgAzGl {
+        background-color: transparent;
+        height: 7.364013671875px;
+        margin-right: -0.5px;
+        object-fit: cover;
+        position: relative;
+        width: 11px;
+      }
+
+      .landing-page .group-143726062-cHP2Xi {
+        background-color: transparent;
+        height: 230px;
+        left: 314px;
+        position: absolute;
+        top: 68px;
+        width: 249px;
+      }
+
+      .landing-page .recent-WjQDHa {
+        top: 0px;
+      }
+
+      .landing-page .post-1-WmNS93 {
+        height: 70px;
+        left: 0px;
+        position: relative;
+        width: 253px;
+      }
+
+      .landing-page .pollar-87-12-july-2024-dtKShz {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 10px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .baku-2024-taekwondo-championships-dtKShz {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 24px;
+        width: 167px;
+      }
+
+      .landing-page .recent-3Nyb0Y {
+        top: 160px;
+      }
+
+      .landing-page .post-1-T6Dy8R {
+        height: 70px;
+        left: 0px;
+        position: relative;
+        width: 253px;
+      }
+
+      .landing-page .cricket-toni-27-july-2024-4U14lE {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 10px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .ireland-tour-of-england-test-2024-4U14lE {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 24px;
+        width: 167px;
+      }
+
+      .landing-page .recent-bwOkhK {
+        top: 80px;
+      }
+
+      .landing-page .post-1-dMG00X {
+        height: 70px;
+        left: 0px;
+        position: relative;
+        width: 253px;
+      }
+
+      .landing-page .goft-toni-20-july-2024-DxSOM9 {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 10px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .open-championship-royal-liverpool-golf-DxSOM9 {
+        background-color: transparent;
+        height: auto;
+        left: 82px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 24px;
+        width: 167px;
+      }
+
+      .landing-page .day-5-highlights-cHP2Xi {
+        background-color: transparent;
+        color: var(--athens-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 500;
+        height: auto;
+        left: 18px;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        top: 288px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .baku-2024-world-taekwondo-championships-cHP2Xi {
+        background-color: transparent;
+        color: var(--athens-gray);
+        font-family: var(--font-family-sequel_sans-romandisp);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+        height: auto;
+        left: 18px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 302px;
+        width: 234px;
+      }
+
+      .landing-page .group-143726066-0MUxxh {
+        background-color: transparent;
+        height: 643px;
+        left: 135px;
+        position: absolute;
+        top: 3256px;
+        width: 1170px;
+      }
+
+      .landing-page .recent-news-clubs-ranking-tmwipw {
+        height: 38px;
+        left: 0px;
+        top: 0px;
+        width: 174px;
+      }
+
+      .landing-page .sports-article-01sHDt {
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 38px;
+        position: absolute;
+        top: 0px;
+        width: auto;
+      }
+
+      .landing-page .group-143726063-tmwipw {
+        background-color: transparent;
+        height: 505px;
+        left: 0px;
+        position: absolute;
+        top: 54px;
+        width: 376px;
+      }
+
+      .landing-page .basketball-equipment-1-stRSGL {
+        background-color: transparent;
+        height: 248px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 370px;
+      }
+
+      .landing-page .x5-exercises-basketba-stRSGL {
+        left: 0px;
+        top: 372px;
+      }
+
+      .landing-page .this-article-was-wri-stRSGL {
+        left: 0px;
+        top: 445px;
+      }
+
+      .landing-page .x04-june-2024-stRSGL {
+        left: 0px;
+        top: 340px;
+      }
+
+      .landing-page .frame-5088-stRSGL {
+        background-color: transparent;
+        border: 0.75px solid;
+        border-color: var(--athens-gray);
+        border-radius: 4px;
+        display: inline-flex;
+        left: 280px;
+        padding: 6px 10px;
+        top: 14px;
+      }
+
+      .landing-page .basketball-qvd1yF {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -0.75px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .group-143726064-tmwipw {
+        background-color: transparent;
+        height: 505px;
+        left: 400px;
+        position: absolute;
+        top: 54px;
+        width: 376px;
+      }
+
+      .landing-page .hockey-players-1-6DvGF7 {
+        background-color: transparent;
+        height: 248px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 370px;
+      }
+
+      .landing-page .golden-knights-out-t-6DvGF7 {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 29px;
+        position: absolute;
+        text-align: left;
+        top: 372px;
+        width: 370px;
+      }
+
+      .landing-page .the-vegas-golden-kni-6DvGF7 {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 445px;
+        width: 357px;
+      }
+
+      .landing-page .x03-june-2024-6DvGF7 {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 14.1px;
+        position: absolute;
+        text-align: left;
+        top: 340px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .frame-5088-6DvGF7 {
+        background-color: transparent;
+        border: 0.75px solid;
+        border-color: var(--athens-gray);
+        border-radius: 4px;
+        display: inline-flex;
+        left: 295px;
+        padding: 6px 10px;
+        top: 14px;
+      }
+
+      .landing-page .hockey-4tT9Wv {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -0.75px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .group-143726065-tmwipw {
+        background-color: transparent;
+        height: 505px;
+        left: 800px;
+        position: absolute;
+        top: 54px;
+        width: 376px;
+      }
+
+      .landing-page .three-white-shuttlec-ehx0wW {
+        background-color: transparent;
+        height: 248px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 370px;
+      }
+
+      .landing-page .outdoor-badminton-ge-ehx0wW {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 29px;
+        position: absolute;
+        text-align: left;
+        top: 372px;
+        width: 370px;
+      }
+
+      .landing-page .the-badminton-world-ehx0wW {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        top: 445px;
+        width: 357px;
+      }
+
+      .landing-page .x01-june-2024-ehx0wW {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: 14.1px;
+        position: absolute;
+        text-align: left;
+        top: 340px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .frame-5088-ehx0wW {
+        background-color: transparent;
+        border: 0.75px solid;
+        border-color: var(--athens-gray);
+        border-radius: 4px;
+        display: inline-flex;
+        left: 275px;
+        padding: 6px 10px;
+        top: 14px;
+      }
+
+      .landing-page .badminton-5UrQWo {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -0.75px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .button-tmwipw {
+        top: 593px;
+        width: 170px;
+      }
+
+      .landing-page .right-button-HY4jPA {
+        left: 100px;
+      }
+
+      .landing-page .arrow-4-RIQjBE {
+        background-color: transparent;
+        height: 15px;
+        left: 22px;
+        position: absolute;
+        top: 18px;
+        width: 26px;
+      }
+
+      .landing-page .frame-RIQjBE {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .rectangle-106-xzGrmD {
+        background-color: #bab8b8;
+      }
+
+      .landing-page .arrow-4-xzGrmD {
+        background-color: transparent;
+        height: 15px;
+        left: 22px;
+        position: absolute;
+        top: 18px;
+        width: 26px;
+      }
+
+      .landing-page .frame-xzGrmD {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: -0px;
+        width: 70px;
+      }
+
+      .landing-page .group-143726067-0MUxxh {
+        background-color: transparent;
+        height: 427px;
+        left: 137px;
+        position: absolute;
+        top: 3939px;
+        width: 1176px;
+      }
+
+      .landing-page .x5-exercises-basketba-l8l7yd {
+        left: 623px;
+        top: 121px;
+      }
+
+      .landing-page .this-article-was-wri-l8l7yd {
+        left: 623px;
+        top: 194px;
+      }
+
+      .landing-page .x04-june-2024-l8l7yd {
+        left: 623px;
+        top: 89px;
+      }
+
+      .landing-page .rectangle-21909-l8l7yd {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 385px;
+        top: 42px;
+      }
+
+      .landing-page .vector-l8l7yd {
+        background-color: transparent;
+        height: 246px;
+        left: 658px;
+        position: absolute;
+        top: 49px;
+        width: 311px;
+      }
+
+      .landing-page .american-football-pl-l8l7yd {
+        background-color: transparent;
+        height: 385px;
+        left: 648px;
+        position: absolute;
+        top: 42px;
+        width: 520px;
+      }
+
+      .landing-page .newsletter-subscription-l8l7yd {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(
+          180deg,
+          rgb(38.0000015348196, 38.0000015348196, 38.0000015348196) 0%,
+          rgb(184.00000423192978, 194.00000363588333, 206.0000029206276) 100%
+        );
+        background-clip: text;
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-sequel_sans-blackdisp);
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 900;
+        height: auto;
+        left: 68px;
+        letter-spacing: 0.6px;
+        line-height: 60px;
+        position: absolute;
+        text-align: left;
+        text-fill-color: transparent;
+        top: 126px;
+        width: 614px;
+      }
+
+      .landing-page .group-143726054-l8l7yd {
+        background-color: transparent;
+        height: 58px;
+        left: 68px;
+        position: absolute;
+        top: 289px;
+        width: 516px;
+      }
+
+      .landing-page .rectangle-21980-ey1ry4 {
+        background-color: transparent;
+        border: 1px solid;
+        border-color: var(--main);
+        border-radius: 6px;
+        height: 58px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 514px;
+      }
+
+      .landing-page .rectangle-21981-ey1ry4 {
+        background-color: var(--main);
+        border-radius: 0px 6px 6px 0px;
+        height: 58px;
+        left: 440px;
+        position: absolute;
+        top: 0px;
+        width: 74px;
+      }
+
+      .landing-page .shovonkhan0099gmailcom-ey1ry4 {
+        background-color: transparent;
+        color: #2626265e;
+        font-family: var(--font-family-dm_sans);
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        height: auto;
+        left: 24px;
+        letter-spacing: 0.21px;
+        line-height: 28px;
+        position: absolute;
+        text-align: left;
+        top: 14px;
+        white-space: nowrap;
+        width: 359px;
+      }
+
+      .landing-page .arrow-4-ey1ry4 {
+        background-color: transparent;
+        height: 19px;
+        left: 467px;
+        position: absolute;
+        top: 19px;
+        width: 19px;
+      }
+
+      .landing-page .group-143726068-0MUxxh {
+        left: 835px;
+        top: 4409px;
+      }
+
+      .landing-page .button-ICcxD3 {
+        top: 5px;
+        width: 470px;
+      }
+
+      .landing-page .right-button-3TyPnu {
+        left: 400px;
+      }
+
+      .landing-page .arrow-4-kcz4HV {
+        background-color: transparent;
+        height: 15px;
+        left: 22px;
+        position: absolute;
+        top: 18px;
+        width: 26px;
+      }
+
+      .landing-page .frame-kcz4HV {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .rectangle-106-FczLzq {
+        background-color: #b9b7b7;
+      }
+
+      .landing-page .frame-FczLzq {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: -0px;
+        width: 70px;
+      }
+
+      .landing-page .x1-ICcxD3 {
+        color: var(--athens-gray);
+        font-family: var(--font-family-sequel_sans-bolddisp);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        left: 126px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x2-ICcxD3 {
+        left: 191px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x3-ICcxD3 {
+        left: 260px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x4-ICcxD3 {
+        left: 330px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .rectangle-22014-0MUxxh {
+        background-color: var(--main);
+        border-radius: 4px;
+        height: 50px;
+        left: 137px;
+        position: absolute;
+        top: 4414px;
+        width: 49px;
+      }
+
+      .landing-page .rectangle-22015-0MUxxh {
+        background-color: var(--main);
+        border-radius: 4px;
+        height: 50px;
+        left: 207px;
+        position: absolute;
+        top: 4414px;
+        width: 50px;
+      }
+
+      .landing-page .rectangle-22016-0MUxxh {
+        background-color: var(--main);
+        border-radius: 4px;
+        height: 50px;
+        left: 278px;
+        position: absolute;
+        top: 4414px;
+        width: 49px;
+      }
+
+      .landing-page .group-143725887-0MUxxh {
+        background-color: transparent;
+        height: 48px;
+        left: 139px;
+        position: absolute;
+        top: 4415px;
+        width: 187px;
+      }
+
+      .landing-page .frame-5035-0MUxxh {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        gap: 19px;
+        left: 363px;
+        position: absolute;
+        top: 15px;
+      }
+
+      .landing-page .nav-list-item-TcDHEY {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .home-8bNqGE {
+        background-color: transparent;
+        color: var(--main);
+        font-family: var(--font-family-dm_sans);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .landing-page .nav-list-item-nJZ1U5 {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .category-0qyHiX {
+        background-color: transparent;
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .landing-page .nav-list-item-FFr9S8 {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .trending-news-Uu3x62 {
+        background-color: transparent;
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .landing-page .nav-list-item-4XWCNV {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .recent-news-p8LS7K {
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
+      }
+
+      .landing-page .frame-5037-TcDHEY {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .clubs-ranking-JxFeLL {
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
+      }
+
+      .landing-page .frame-5038-TcDHEY {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .landing-page .sports-article-OVSz7y {
+        letter-spacing: 0.15px;
+        line-height: 42px;
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
+      }
+
+      .landing-page .sport-news-0MUxxh {
+        background-color: transparent;
+        color: var(--black-2);
+        font-family: var(--font-family-darkline-regular);
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 400;
+        height: 42px;
+        left: 135px;
+        letter-spacing: 0.42px;
+        line-height: 42px;
+        position: absolute;
+        text-align: left;
+        top: 22px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .group-143726069-0MUxxh {
+        background-color: transparent;
+        height: 618px;
+        left: 136px;
+        position: absolute;
+        top: 2132px;
+        width: 1174px;
+      }
+
+      .landing-page .rectangle-21910-0bf4gY {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        height: 618px;
+        left: 0px;
+        mix-blend-mode: normal;
+        opacity: 0.6;
+        position: absolute;
+        top: 0px;
+        width: 1168px;
+      }
+
+      .landing-page .group-143726068-0bf4gY {
+        left: 673px;
+        top: 538px;
+      }
+
+      .landing-page .button-TJeFAx {
+        top: 5px;
+        width: 470px;
+      }
+
+      .landing-page .right-button-wkDqId {
+        left: 400px;
+      }
+
+      .landing-page .arrow-4-vgeGqx {
+        background-color: transparent;
+        height: 15px;
+        left: 22px;
+        position: absolute;
+        top: 18px;
+        width: 26px;
+      }
+
+      .landing-page .frame-vgeGqx {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .rectangle-106-YWDtWY {
+        background-color: #b9b7b7;
+      }
+
+      .landing-page .frame-YWDtWY {
+        background-color: transparent;
+        height: 50px;
+        left: -0px;
+        position: absolute;
+        top: -0px;
+        width: 70px;
+      }
+
+      .landing-page .x1-TJeFAx {
+        color: var(--athens-gray);
+        font-family: var(--font-family-sequel_sans-bolddisp);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        left: 126px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x2-TJeFAx {
+        left: 191px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x3-TJeFAx {
+        left: 260px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        text-align: left;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x4-TJeFAx {
+        left: 330px;
+        letter-spacing: 0.24px;
+        line-height: 60px;
+        top: 0px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .two-opposing-players-0bf4gY {
+        background-color: transparent;
+        height: 518px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 1168px;
+      }
+
+      .landing-page .rectangle-21909-0bf4gY {
+        background-color: var(--black-2);
+        border-radius: 6px 6px 0px 0px;
+        height: 518px;
+        mix-blend-mode: normal;
+        opacity: 0.6;
+        top: 0px;
+      }
+
+      .landing-page .frame-5088-0bf4gY {
+        background-color: transparent;
+        border: 1px solid;
+        border-color: var(--athens-gray);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 36px;
+        left: 48px;
+        padding: 29px 26px;
+        top: 31px;
+        width: 108px;
+      }
+
+      .landing-page .football-9Pol9I {
+        color: var(--athens-gray);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: -22.96px;
+        margin-left: -10.15px;
+        margin-right: -10.15px;
+        margin-top: -24.96px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .landing-page .lionel-messi-leaving-0bf4gY {
+        background-color: transparent;
+        color: var(--alabaster);
+        font-family: var(--font-family-sequel_sans-blackdisp);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 900;
+        height: auto;
+        left: 48px;
+        letter-spacing: 0px;
+        line-height: 43px;
+        position: absolute;
+        text-align: left;
+        top: 313px;
+        width: 760px;
+      }
+
+      .landing-page .agence-france-presse-04-june-2024-0bf4gY {
+        background-color: transparent;
+        color: var(--alabaster);
+        font-family: var(--font-family-dm_sans);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 400;
+        height: auto;
+        left: 48px;
+        letter-spacing: 0px;
+        line-height: 18.2px;
+        position: absolute;
+        text-align: left;
+        top: 289px;
+        white-space: nowrap;
+        width: 375px;
+      }
+
+      .landing-page .the-euro-league-fina-0bf4gY {
+        color: var(--white);
+        font-size: var(--font-size-xl);
+        font-weight: 500;
+        left: 48px;
+        line-height: 28px;
+        top: 417px;
+        width: 697px;
+      }
+
+      .landing-page .background {
+        background-color: var(--athens-gray);
+        height: 38px;
+        left: 0px;
+        position: absolute;
+        width: 570px;
+      }
+
+      .landing-page .button {
+        background-color: transparent;
+        height: 50px;
+        left: 0px;
+        position: absolute;
+      }
+
+      .landing-page .club {
+        background-color: transparent;
+        position: absolute;
+      }
+
+      .landing-page .clubs-ranking {
+        background-color: transparent;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .landing-page .content {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+        left: 0px;
+        position: absolute;
+        top: 276px;
+        width: 322px;
+      }
+
+      .landing-page .ellipse-439 {
+        background-color: var(--main);
+        border-radius: 17.5px;
+        height: 35px;
+        left: 113px;
+        position: absolute;
+        top: 13px;
+        width: 35px;
+      }
+
+      .landing-page .football {
+        background-color: transparent;
+        letter-spacing: 0px;
+      }
+
+      .landing-page .frame-5088 {
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+      }
+
+      .landing-page .group-143726068 {
+        background-color: transparent;
+        height: 60px;
+        position: absolute;
+        width: 478px;
+      }
+
+      .landing-page .header {
+        background-color: transparent;
+        flex: 1;
+        letter-spacing: 0.1px;
+        line-height: 22px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+      }
+
+      .landing-page .image {
+        background-color: transparent;
+        height: 70px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .imgavatar03 {
+        background-color: transparent;
+        border-radius: 12px;
+        height: 44px;
+        overflow: hidden;
+        position: relative;
+        width: 44px;
+      }
+
+      .landing-page .left-button {
+        background-color: transparent;
+        height: 50px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .line {
+        background-color: transparent;
+        position: absolute;
+      }
+
+      .landing-page .post-1 {
+        background-color: transparent;
+        top: 0px;
+      }
+
+      .landing-page .post-2 {
+        background-color: transparent;
+        height: 54px;
+        left: 18px;
+        position: absolute;
+        top: 167px;
+      }
+
+      .landing-page .post-3 {
+        background-color: transparent;
+        height: 150px;
+        left: 36px;
+        position: absolute;
+        width: 505px;
+      }
+
+      .landing-page .race98-03-june-2024 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: 10.1px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .recent {
+        background-color: transparent;
+        height: 70px;
+        left: 0px;
+        position: absolute;
+        width: 249px;
+      }
+
+      .landing-page .recent-news {
+        background-color: transparent;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .landing-page .recent-news-clubs-ranking {
+        background-color: transparent;
+        position: absolute;
+      }
+
+      .landing-page .rectangle-105 {
+        background-color: var(--main);
+        border-radius: 3px;
+        height: 50px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .rectangle-106 {
+        border-radius: 3px;
+        height: 50px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        transform: rotate(-180deg);
+        width: 70px;
+      }
+
+      .landing-page .rectangle-21909 {
+        left: 0px;
+        position: absolute;
+        width: 1168px;
+      }
+
+      .landing-page .rectangle-21988 {
+        background: linear-gradient(
+          180deg,
+          rgb(242.00000077486038, 242.00000077486038, 242.00000077486038) 0%,
+          rgba(242.00000077486038, 242.00000077486038, 242.00000077486038, 0)
+            100%
+        );
+        background-color: transparent;
+        border-radius: 6px;
+        height: 132px;
+        left: 0px;
+        position: absolute;
+        top: 101px;
+        width: 270px;
+      }
+
+      .landing-page .rectangle-22000 {
+        background-color: var(--athens-gray);
+        border-radius: 6px;
+        left: -0px;
+        position: absolute;
+        transform: rotate(180deg);
+      }
+
+      .landing-page .right-button {
+        background-color: transparent;
+        height: 50px;
+        position: absolute;
+        top: 0px;
+        width: 70px;
+      }
+
+      .landing-page .sports-article {
+        background-color: transparent;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .landing-page .text {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 1;
+        flex-grow: 1;
+        gap: 1px;
+        justify-content: center;
+        position: relative;
+      }
+
+      .landing-page .the-euro-league-fina {
+        background-color: transparent;
+        font-family: var(--font-family-dm_sans);
+        font-style: normal;
+        height: auto;
+        letter-spacing: 0px;
+        position: absolute;
+        text-align: left;
+      }
+
+      .landing-page .this-article-was-wri {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: 19.8px;
+        position: absolute;
+        text-align: left;
+        width: 357px;
+      }
+
+      .landing-page .unsplashb5-p-ltlp-r7-ya {
+        background-color: transparent;
+        height: 44px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 44px;
+      }
+
+      .landing-page .x04-june-2024 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: 14.1px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .landing-page .x1 {
+        background-color: transparent;
+        height: auto;
+        position: absolute;
+        text-align: left;
+      }
+
+      .landing-page .x11 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        width: 19px;
+      }
+
+      .landing-page .x13 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+        width: 19px;
+      }
+
+      .landing-page .x2 {
+        background-color: transparent;
+        height: auto;
+        position: absolute;
+      }
+
+      .landing-page .x22 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        width: 19px;
+      }
+
+      .landing-page .x26 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        width: 19px;
+      }
+
+      .landing-page .x29 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        width: 19px;
+      }
+
+      .landing-page .x3 {
+        background-color: transparent;
+        height: auto;
+        position: absolute;
+      }
+
+      .landing-page .x38 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        width: 19px;
+      }
+
+      .landing-page .x4 {
+        background-color: transparent;
+        height: auto;
+        position: absolute;
+        text-align: left;
+      }
+
+      .landing-page .x5 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        width: 10px;
+      }
+
+      .landing-page .x5-exercises-basketba {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: 29px;
+        position: absolute;
+        text-align: left;
+        width: 370px;
+      }
+
+      .landing-page .x57 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 9px;
+        width: 19px;
+      }
+
+      .landing-page .x6 {
+        background-color: transparent;
+        height: auto;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        width: 10px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; background: #f9fafc">
+    <input type="hidden" id="anPageName" name="page" value="landing-page" />
+    <div class="container-center-horizontal">
+      <div class="landing-page screen" data-id="34:3879">
+        <div class="rectangle-21901-0MUxxh" data-id="34:3880"></div>
+        <div class="nav-list-item-0MUxxh" data-id="34:3881">
+          <div class="search-faN10f valign-text-bottom" data-id="34:3884">
+            Register
+          </div>
+        </div>
+
+        <div class="trending-news-0MUxxh" data-id="34:3885">
+          <div
+            class="rectangle-22000-jRzKJo rectangle-22000"
+            data-id="34:3886"
+          ></div>
+          <div class="post-3-jRzKJo post-3" data-id="34:3887">
+            <p
+              class="x6-year-old-horse-die-SiiocF sequelsans-mediumdisp-medium-shark-18px"
+              data-id="34:3888"
+            >
+              6-Year-Old Horse Dies at Belmont Park After Race Injury
+            </p>
+            <p
+              class="race98-03-june-2024-SiiocF race98-03-june-2024 dmsans-medium-shark-10px"
+              data-id="34:3889"
+            >
+              Race98 - 03 September 2024
+            </p>
+            <p
+              class="new-yorka-6-year-old-SiiocF dmsans-normal-granite-gray-12px"
+              data-id="34:3890"
+            >
+              NEW YORK—A 6-year-old horse died after being injured in a race at
+              Belmont Park ahead of next week’s
+            </p>
+            <img
+              class="race-hose-1-SiiocF"
+              data-id="34:3891"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/race-hose-1@2x.png"
+              alt="race-hose 1"
+            />
+          </div>
+          <div class="post-3-xWxvFN post-3" data-id="34:3892">
+            <p
+              class="savilia-blunk-embrac-g6luve sequelsans-mediumdisp-medium-shark-18px"
+              data-id="34:3893"
+            >
+              Savilia Blunk Embraces Longer Season With World Cup
+            </p>
+            <p
+              class="jony-ls-03-june-2024-g6luve dmsans-medium-shark-10px"
+              data-id="34:3894"
+            >
+              Jony.Ls - 03 September 2024
+            </p>
+            <p
+              class="last-year-savilia-bl-g6luve dmsans-normal-granite-gray-12px"
+              data-id="34:3895"
+            >
+              Last year, Savilia Blunk took a more conservative approach to her
+              first season as an Elite Class athlete, skipping some
+            </p>
+            <img
+              class="cyclist-leads-action-g6luve"
+              data-id="34:3896"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/cyclist-leads-actionfront-view-man-riding-bicycle-racing-road-1@2x.png"
+              alt="cyclist-leads-actionfront-view-man-riding-bicycle-racing-road 1"
+            />
+          </div>
+          <div class="post-3-btIsFx post-3" data-id="34:3897">
+            <p
+              class="ryan-garcia-is-fight-qQsPMl sequelsans-mediumdisp-medium-shark-18px"
+              data-id="34:3898"
+            >
+              Ryan Garcia is fighting again, this time on social media
+            </p>
+            <p
+              class="kingf-03-june-2024-qQsPMl dmsans-medium-shark-10px"
+              data-id="34:3899"
+            >
+              King.F - 03 September 2024
+            </p>
+            <p
+              class="boxing-star-ryan-gar-qQsPMl dmsans-normal-granite-gray-12px"
+              data-id="34:3900"
+            >
+              Boxing star Ryan Garcia and his promoter, Hall of Fame fighter
+              Oscar De La Hoya, reignited their war of words via Twitter on
+            </p>
+            <img
+              class="empty-boxing-arena-w-qQsPMl"
+              data-id="34:3901"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/empty-boxing-arena-waiting-new-round-d-render-illustration-1@2x.png"
+              alt="empty-boxing-arena-waiting-new-round-d-render-illustration 1"
+            />
+          </div>
+          <div
+            class="trending-news-jRzKJo sequelsans-mediumdisp-medium-shark-28px"
+            data-id="34:3902"
+          >
+            Trending News
+          </div>
+          <div class="post-1-jRzKJo post-1" data-id="34:3903">
+            <img
+              class="sportsman-drinking-w-xsB2G2"
+              data-id="34:3904"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/sportsman-drinking-water-training-stationary-bike-1.png"
+              alt="sportsman-drinking-water-training-stationary-bike 1"
+            />
+            <div class="rectangle-22011-xsB2G2" data-id="34:3905"></div>
+            <div class="frame-5088-xsB2G2 frame-5088" data-id="34:3906">
+              <div class="cycling-IaernK" data-id="34:3907">Cycling</div>
+            </div>
+            <p class="discover-the-member-xsB2G2" data-id="34:3908">
+              Discover The Member Benefits Of Usa Cycling!
+            </p>
+            <p class="debits-03-june-2024-xsB2G2" data-id="34:3909">
+              Debits - 03 September 2024
+            </p>
+          </div>
+        </div>
+        <div class="category-0MUxxh" data-id="34:3910">
+          <div
+            class="category-AEV5jU sequelsans-mediumdisp-medium-shark-28px"
+            data-id="34:3911"
+          >
+            Category
+          </div>
+          <div
+            class="rectangle-22000-AEV5jU rectangle-22000"
+            data-id="34:3912"
+          ></div>
+          <div
+            class="football-AEV5jU football sequelsans-blackdisp-black-white-37px"
+            data-id="34:3913"
+          >
+            FOOTBALL
+          </div>
+          <div class="rectangle-22004-AEV5jU" data-id="34:3914"></div>
+          <div class="rectangle-22001-AEV5jU" data-id="34:3915"></div>
+          <div class="rectangle-22002-AEV5jU" data-id="34:3916"></div>
+          <div
+            class="bascket-ball-AEV5jU sequelsans-blackdisp-black-white-37px"
+            data-id="34:3917"
+          >
+            BASKET BALL
+          </div>
+          <div
+            class="car-sport-AEV5jU sequelsans-blackdisp-black-white-37px"
+            data-id="34:3918"
+          >
+            BADMINTON
+          </div>
+          <div class="rectangle-22006-AEV5jU" data-id="34:3919"></div>
+          <div
+            class="table-tennis-AEV5jU sequelsans-blackdisp-black-white-37px"
+            data-id="34:3920"
+          >
+            TABLE TENNIS
+          </div>
+          <div class="rectangle-22003-AEV5jU" data-id="34:3921"></div>
+          <div class="rectangle-22005-AEV5jU" data-id="34:3922"></div>
+          <div class="rectangle-22007-AEV5jU" data-id="34:3923"></div>
+          <img
+            class="soccer-ball-green-gr-AEV5jU"
+            data-id="34:3924"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/soccer-ball-green-grass-soccer-field-generative-ai-1@2x.png"
+            alt="soccer-ball-green-grass-soccer-field-generative-ai 1"
+          /><img
+            class="close-up-basketball-outdoors-1-AEV5jU"
+            data-id="34:3925"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/close-up-basketball-outdoors-1@2x.png"
+            alt="close-up-basketball-outdoors 1"
+          /><img
+            class="sport-car-is-driftin-AEV5jU"
+            data-id="34:3926"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/tdslyl0pptzs6vst4uq5"
+            alt="sport-car-is-drifting-track-with-smoke-around-it 1"
+          /><img
+            class="red-ping-pong-racket-sports-equipment-1-AEV5jU"
+            data-id="34:3927"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/red-ping-pong-racket-sports-equipment-1@2x.png"
+            alt="red-ping-pong-racket-sports-equipment 1"
+          />
+        </div>
+        <div class="hero-section-0MUxxh" data-id="34:3928">
+      
+          
+        </div>
+        <img
+          class="line-72-0MUxxh"
+          data-id="34:3951"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/line-72.svg"
+          alt="Line 72"
+        /><img
+          class="line-73-0MUxxh"
+          data-id="34:3952"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/line-72.svg"
+          alt="Line 73"
+        />
+        <div
+          class="recent-news-clubs-ranking-0MUxxh recent-news-clubs-ranking"
+          data-id="34:3953"
+        >
+          <div class="rectangle-22012-cHP2Xi" data-id="34:3954"></div>
+         <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/11271/production/_119875207_top_performers_medals-2x-nc.png.webp" style="position: absolute; right:12.5px;" width="560px" alt="" srcset="">
+          <div
+            class="clubs-ranking-cHP2Xi clubs-ranking sequelsans-mediumdisp-medium-shark-28px"
+            data-id="34:4046"
+          >
+          </div>
+          <div
+            class="recent-news-cHP2Xi recent-news sequelsans-mediumdisp-medium-shark-28px"
+            data-id="34:4047"
+          >
+            Recent News
+          </div>
+          <img
+            class="karate-fighters-1-cHP2Xi"
+            data-id="34:4048"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/karate-fighters-1@2x.png"
+            alt="karate-fighters 1"
+          />
+          <div class="card-cHP2Xi" data-id="34:4049">
+            <img
+              class="noise-iicxxJ"
+              data-id="34:4050"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/noise.png"
+              alt="Noise"
+            />
+          </div>
+          <div class="rectangle-22013-cHP2Xi" data-id="34:4051"></div>
+          <div class="nav-list-item-cHP2Xi" data-id="34:4052">
+            <div class="more-YgAzGl valign-text-middle" data-id="34:4053">
+              More
+            </div>
+            <img
+              class="arrow-4-YgAzGl"
+              data-id="34:4054"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/arrow-4.svg"
+              alt="Arrow 4"
+            />
+          </div>
+          <div class="group-143726062-cHP2Xi" data-id="34:4055">
+            <div class="recent-WjQDHa recent" data-id="34:4056">
+              <div class="post-1-WmNS93 post-1" data-id="34:4057">
+                <img
+                  class="image"
+                  data-id="34:4058"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/image@2x.png"
+                  alt="Image"
+                />
+                <p
+                  class="pollar-87-12-july-2024-dtKShz dmsans-medium-shark-10px"
+                  data-id="34:4059"
+                >
+                  #Pollar. 87 - 12 July 2024
+                </p>
+                <div
+                  class="baku-2024-taekwondo-championships-dtKShz sequelsans-romandisp-normal-shark-16px"
+                  data-id="34:4060"
+                >
+                  Baku 2024 Taekwondo Championships
+                </div>
+              </div>
+            </div>
+            <div class="recent-3Nyb0Y recent" data-id="34:4061">
+              <div class="post-1-T6Dy8R post-1" data-id="34:4062">
+                <img
+                  class="image"
+                  data-id="34:4063"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/image-1@2x.png"
+                  alt="Image"
+                />
+                <p
+                  class="cricket-toni-27-july-2024-4U14lE dmsans-medium-shark-10px"
+                  data-id="34:4064"
+                >
+                  #Cricket. Toni - 27 July 2024
+                </p>
+                <p
+                  class="ireland-tour-of-england-test-2024-4U14lE sequelsans-romandisp-normal-shark-16px"
+                  data-id="34:4065"
+                >
+                  Ireland Tour of England Test 2024
+                </p>
+              </div>
+            </div>
+            <div class="recent-bwOkhK recent" data-id="34:4066">
+              <div class="post-1-dMG00X post-1" data-id="34:4067">
+                <img
+                  class="image"
+                  data-id="34:4068"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/image-2@2x.png"
+                  alt="Image"
+                />
+                <p
+                  class="goft-toni-20-july-2024-DxSOM9 dmsans-medium-shark-10px"
+                  data-id="34:4069"
+                >
+                  #Goft. Toni - 20 July 2024
+                </p>
+                <p
+                  class="open-championship-royal-liverpool-golf-DxSOM9 sequelsans-romandisp-normal-shark-16px"
+                  data-id="34:4070"
+                >
+                  Open Championship Royal Liverpool Golf
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="day-5-highlights-cHP2Xi" data-id="34:4071">
+            Day 5 Highlights
+          </div>
+          <p
+            class="baku-2024-world-taekwondo-championships-cHP2Xi"
+            data-id="34:4072"
+          >
+            Baku 2024 World Taekwondo Championships
+          </p>
+        </div>
+        <div class="group-143726066-0MUxxh" data-id="34:4073">
+          <div
+            class="recent-news-clubs-ranking-tmwipw recent-news-clubs-ranking"
+            data-id="34:4074"
+          >
+            <div
+              class="sports-article-01sHDt sports-article sequelsans-mediumdisp-medium-shark-28px"
+              data-id="34:4075"
+            >
+              Sports Article
+            </div>
+          </div>
+          <div class="group-143726063-tmwipw" data-id="34:4076">
+            <img
+              class="basketball-equipment-1-stRSGL"
+              data-id="34:4077"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/basketball-equipment-1@2x.png"
+              alt="basketball-equipment 1"
+            />
+            <p
+              class="x5-exercises-basketba-stRSGL x5-exercises-basketba sequelsans-mediumdisp-medium-shark-22px"
+              data-id="34:4078"
+            >
+              5 Exercises Basketball Players Should Be Using To Develop Strength
+            </p>
+            <p
+              class="this-article-was-wri-stRSGL this-article-was-wri dmsans-medium-granite-gray-16px"
+              data-id="34:4079"
+            >
+              This article was written by Jake Willhoite from Healthlisted.com
+              Strength in basketball isn’t all about a massive body mass or
+              ripped muscles.
+            </p>
+            <div class="content" data-id="34:4080">
+              <div class="imgavatar03" data-id="34:4081">
+                <img
+                  class="unsplashb5-p-ltlp-r7-ya"
+                  data-id="I34:4081;273:2610"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/unsplash-b5pltlpr7ya@2x.png"
+                  alt="unsplash:B5PLtlpR7YA"
+                />
+              </div>
+              <div class="text" data-id="34:4082">
+                <div class="header roboto-medium-dune-14px" data-id="34:4083">
+                  Jake Will.
+                </div>
+              </div>
+            </div>
+            <div
+              class="x04-june-2024-stRSGL x04-june-2024 dmsans-medium-shark-14px"
+              data-id="34:4084"
+            >
+              04 September 2024
+            </div>
+            <div class="frame-5088-stRSGL frame-5088" data-id="34:4085">
+              <div
+                class="basketball-qvd1yF dmsans-normal-athens-gray-12px"
+                data-id="34:4086"
+              >
+                Basketball
+              </div>
+            </div>
+          </div>
+          <div class="group-143726064-tmwipw" data-id="34:4087">
+            <img
+              class="hockey-players-1-6DvGF7"
+              data-id="34:4088"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/hockey-players-1@2x.png"
+              alt="hockey-players 1"
+            />
+            <p
+              class="golden-knights-out-t-6DvGF7 sequelsans-mediumdisp-medium-shark-22px"
+              data-id="34:4089"
+            >
+              Golden Knights out to fulfill owner&#39;s quest to win Stanley Cup
+              in 6th year
+            </p>
+            <p
+              class="the-vegas-golden-kni-6DvGF7 dmsans-medium-granite-gray-16px"
+              data-id="34:4090"
+            >
+              The Vegas Golden Knights will play the Florida Panthers in the
+              Stanley Cup Final beginning Saturday.
+            </p>
+            <div class="content" data-id="34:4091">
+              <div class="imgavatar03" data-id="34:4092">
+                <img
+                  class="unsplashb5-p-ltlp-r7-ya"
+                  data-id="I34:4092;273:2610"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/unsplash-b5pltlpr7ya-1@2x.png"
+                  alt="unsplash:B5PLtlpR7YA"
+                />
+              </div>
+              <div class="text" data-id="34:4093">
+                <div class="header roboto-medium-dune-14px" data-id="34:4094">
+                  Foxi.zacon
+                </div>
+              </div>
+            </div>
+            <div
+              class="x03-june-2024-6DvGF7 dmsans-medium-shark-14px"
+              data-id="34:4095"
+            >
+              03 September 2024
+            </div>
+            <div class="frame-5088-6DvGF7 frame-5088" data-id="34:4096">
+              <div
+                class="hockey-4tT9Wv dmsans-normal-athens-gray-12px"
+                data-id="34:4097"
+              >
+                Hockey
+              </div>
+            </div>
+          </div>
+          <div class="group-143726065-tmwipw" data-id="34:4098">
+            <img
+              class="three-white-shuttlec-ehx0wW"
+              data-id="34:4099"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/three-white-shuttlecocks-badminton-racquet-1@2x.png"
+              alt="three-white-shuttlecocks-badminton-racquet 1"
+            />
+            <p
+              class="outdoor-badminton-ge-ehx0wW sequelsans-mediumdisp-medium-shark-22px"
+              data-id="34:4100"
+            >
+              ‘Outdoor’ Badminton Gets Support From Local Federation
+            </p>
+            <p
+              class="the-badminton-world-ehx0wW dmsans-medium-granite-gray-16px"
+              data-id="34:4101"
+            >
+              The Badminton World Federation is developing Air Badminton and the
+              country’s governing body, Philippine Badminton Association.
+            </p>
+            <div class="content" data-id="34:4102">
+              <div class="imgavatar03" data-id="34:4103">
+                <img
+                  class="unsplashb5-p-ltlp-r7-ya"
+                  data-id="I34:4103;273:2610"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                  anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/unsplash-b5pltlpr7ya-2@2x.png"
+                  alt="unsplash:B5PLtlpR7YA"
+                />
+              </div>
+              <div class="text" data-id="34:4104">
+                <div class="header roboto-medium-dune-14px" data-id="34:4105">
+                  Bong Lozada
+                </div>
+              </div>
+            </div>
+            <div
+              class="x01-june-2024-ehx0wW dmsans-medium-shark-14px"
+              data-id="34:4106"
+            >
+              01 September 2024
+            </div>
+            <div class="frame-5088-ehx0wW frame-5088" data-id="34:4107">
+              <div
+                class="badminton-5UrQWo dmsans-normal-athens-gray-12px"
+                data-id="34:4108"
+              >
+                Badminton
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        <div class="group-143726067-0MUxxh" data-id="34:4120">
+          <p
+            class="x5-exercises-basketba-l8l7yd x5-exercises-basketba sequelsans-mediumdisp-medium-shark-22px"
+            data-id="34:4121"
+          >
+            5 Exercises Basketball Players Should Be Using To Develop Strength
+          </p>
+          <p
+            class="this-article-was-wri-l8l7yd this-article-was-wri dmsans-medium-granite-gray-16px"
+            data-id="34:4122"
+          >
+            This article was written by Jake Willhoite from Healthlisted.com
+            Strength in basketball isn’t all about a massive body mass or ripped
+            muscles.
+          </p>
+          <div
+            class="x04-june-2024-l8l7yd x04-june-2024 dmsans-medium-shark-14px"
+            data-id="34:4123"
+          >
+            04 September 2024
+          </div>
+          <div
+            class="rectangle-21909-l8l7yd rectangle-21909"
+            data-id="34:4124"
+          ></div>
+          <img
+            class="vector-l8l7yd"
+            data-id="34:4125"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/vector.svg"
+            alt="Vector"
+          /><img
+            class="american-football-pl-l8l7yd"
+            data-id="34:4126"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/american-football-player-posing-with-ball-white-1.png"
+            alt="american-football-player-posing-with-ball-white 1"
+          />
+          <div class="newsletter-subscription-l8l7yd" data-id="34:4127">
+            NEWSLETTER SUBSCRIPTION
+          </div>
+          <div class="group-143726054-l8l7yd" data-id="34:4128">
+            <div class="rectangle-21980-ey1ry4" data-id="34:4129"></div>
+            <div class="rectangle-21981-ey1ry4" data-id="34:4130"></div>
+            <div class="shovonkhan0099gmailcom-ey1ry4" data-id="34:4131">
+              shovon.khan0099@gmail.com
+            </div>
+            <img
+              class="arrow-4-ey1ry4"
+              data-id="34:4132"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+              anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/arrow-4-3.svg"
+              alt="Arrow 4"
+            />
+          </div>
+        </div>
+       
+        <div class="rectangle-22014-0MUxxh" data-id="34:4150"></div>
+        <div class="rectangle-22015-0MUxxh" data-id="34:4151"></div>
+        <div class="rectangle-22016-0MUxxh" data-id="34:4152"></div>
+        <a href="https://olympics.com/">
+        <img
+          class="group-143725887-0MUxxh"
+          data-id="34:4153"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/group-143725887@2x.png"
+          alt="Group 143725887"
+        /></a>
+        <style>
+          .flex {
+            display: flex !important;
+            position: static !important;
+            margin-top: 20px;
+          }
+          .mx-auto {
+            margin-right: auto;
+            margin-left: auto;
+          }
+          .jc {
+            justify-content: center;
+          }
+        </style>
+        <div class="frame-5035-0MUxxh flex jc" data-id="34:4167">
+          <div class="nav-list-item-TcDHEY" data-id="34:4168">
+            <div class="home-8bNqGE valign-text-bottom" data-id="34:4169">
+              Home
+            </div>
+          </div>
+          <div class="nav-list-item-nJZ1U5" data-id="34:4170">
+            <a href="https://olympics.com/en/paris-2024/schedule/11-august" target="_blank">
+            <div
+              class="category-0qyHiX valign-text-bottom dmsans-normal-shark-15px"
+              data-id="34:4171"
+            >
+              Event
+            </div></a>
+          </div>
+          <div class="nav-list-item-FFr9S8" data-id="34:4172">
+            <a href="https://olympics.com/en/athletes/" target="_blank">
+              <div
+                class="category-0qyHiX valign-text-bottom dmsans-normal-shark-15px"
+                data-id="34:4171"
+              >
+                Athlete
+              </div></a>
+          </div>
+          <div class="nav-list-item-4XWCNV" data-id="34:4174">
+            <a href="            https://en.wikipedia.org/wiki/Olympic_Games
+            " target="_blank">
+              <div
+              class="recent-news-p8LS7K valign-text-bottom recent-news dmsans-normal-shark-15px"
+              data-id="34:4175"
+            >
+              History
+            </div></a>
+
+          </div>
+          <div class="frame-5037-TcDHEY" data-id="34:4176">
+            <a href="https://shop.olympics.com/en/paris-2024/t-1299990829+z-949567-2073334460?_s=bm-fi-ioc-prtsite-P24-Shoptopnav-120324-en-nl">
+            <div
+              class="clubs-ranking-JxFeLL valign-text-bottom clubs-ranking dmsans-normal-shark-15px"
+              data-id="34:4177"
+            >
+              Booking
+            </div></a>
+          </div>
+        </div>
+        <div class="sport-news-0MUxxh valign-text-bottom" data-id="34:4180">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/b/b1/Olympic_Rings.svg"
+            height="50px"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="group-143726069-0MUxxh" data-id="34:4181">
+          <div class="rectangle-21910-0bf4gY" data-id="34:4182"></div>
+          
+          <img
+            class="two-opposing-players-0bf4gY"
+            data-id="34:4200"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            anima-src="https://cdn.animaapp.com/projects/66f6e5d71062e78fcef7466f/releases/66f6e643a04a9f88bbe6270f/img/two-opposing-players-give-handshake-end-game-1.png"
+            alt="two-opposing-players-give-handshake-end-game 1"
+          />
+          <div
+            class="rectangle-21909-0bf4gY rectangle-21909"
+            data-id="34:4201"
+          ></div>
+          <div class="frame-5088-0bf4gY frame-5088" data-id="34:4202">
+            <div class="football-9Pol9I football" data-id="34:4203">
+              Football
+            </div>
+          </div>
+          <p class="lionel-messi-leaving-0bf4gY" data-id="34:4204">
+            LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS
+          </p>
+          <p class="agence-france-presse-04-june-2024-0bf4gY" data-id="34:4205">
+            Agence France-Presse - 04 September 2024
+          </p>
+          <p
+            class="the-euro-league-fina-0bf4gY the-euro-league-fina"
+            data-id="34:4206"
+          >
+            The EuroLeague Finals Top Scorer is the individual award for the
+            player that gained the highest points in the EuroLeague Finals
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="launchpad-js/launchpad-banner.js" async></script>
+    <script
+      defer
+      src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"
+    ></script>
+  </body>
+</html>
